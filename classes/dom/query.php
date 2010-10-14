@@ -77,7 +77,7 @@ class Dom_Query {
 		if (NULL === $this->_document)
 			throw new Dom_Query_Exception('Cannot query empty document');
 
-		$xpath_query = Dom_Query_Parser::instance($query);
+		$xpath_query = Dom_Query_Parser::factory($query);
 		return $this->_xpath_query($xpath_query, $query);
 	}
 
@@ -86,8 +86,6 @@ class Dom_Query {
 		$dom_document = new DOMDocument;
 		$type = $this->get_doc_type();
 
-		// Could suppress DOM errors when loading the document
-		// however you should be using POSH.
 		switch ($type)
 		{
 			case Dom_Query::DOC_XML :
