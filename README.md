@@ -1,4 +1,4 @@
-# Using DOM Query
+# Usage
 
 Create an object of DOM Query. 
 
