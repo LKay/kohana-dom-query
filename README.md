@@ -24,6 +24,6 @@ And many more. The simple way to get elements is:
 		// This will get you all elements with CSS class .my_class
 	
 		// Now you can iterate all elements one by one
-		foreach () {
+		foreach ($elements as $element) {
 			echo $element->nodeName; // This will echo tag name of the element 
 		}
