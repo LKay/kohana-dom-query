@@ -101,16 +101,16 @@ class Dom_Query_Parser {
 		return $expression;
 	}
 
-	protected function _create_equality_expression($matches) {
+	protected static function _create_equality_expression($matches) {
 		return '[@' . strtolower($matches[1]) . "='" . $matches[2] . "']";
 	}
 
-	protected function _normalize_space_attribute($matches) {
+	protected static function _normalize_space_attribute($matches) {
 		return "[contains(concat(' ', normalize-space(@" . strtolower($matches[1]) . "), ' '), ' " 
 			. $matches[2] . " ')]";
 	}
 
-	protected function _create_contains_expression($matches) {
+	protected static function _create_contains_expression($matches) {
 		return "[contains(@" . strtolower($matches[1]) . ", '" 
 			. $matches[2] . "')]";
 	}
